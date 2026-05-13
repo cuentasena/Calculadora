@@ -1,0 +1,20 @@
+<div class="calculadora">
+  <app-pantalla [display]="display"></app-pantalla>
+  
+  <div class="botones">
+
+    <app-boton valor="C" (onClick)="manejarClick($event)"></app-boton>
+    
+  
+    @for (num of numeros; track num) {
+      <app-boton [valor]="num" (onClick)="manejarClick($event)"></app-boton>
+    }
+    
+   
+    @for (op of operaciones; track op) {
+      <app-boton [valor]="op" (onClick)="manejarClick($event)"></app-boton>
+    }
+    
+    <app-boton valor="=" (onClick)="manejarClick($event)"></app-boton>
+  </div>
+</div>
